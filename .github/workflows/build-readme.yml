@@ -3,7 +3,7 @@ name: Build README
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   build-readme:
