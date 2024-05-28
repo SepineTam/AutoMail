@@ -41,14 +41,18 @@ Create a .env file in the project root directory and add the following content:
 Or you could change '.env.demo' file to '.env' and change the file body
 
 it looks like ⬇️
-```.env
+```
+# .env
+USERNAME=YOUR_NAME
 SMTP_SERVER=smtp.shu.edu.cn
 SMTP_PORT=465
-EMAIL_USERNAME=@shu.edu.cn
+EMAIL_USERNAME=your_address@shu.edu.cn
 EMAIL_PASSWORD=your_password
 RECIPIENT_EMAIL=recipient@example.com
+RECIPIENT_EMAIL=xiaoyuluowork@gmail.com
 LOG_PATH=.log
 ```
+
 
 ## Run the Project
 Run the main program file:

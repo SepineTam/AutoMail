@@ -43,11 +43,13 @@ pip install -r requirements.txt
 文件内容如下⬇️
 ```
 # .env
+USERNAME=YOUR_NAME
 SMTP_SERVER=smtp.shu.edu.cn
 SMTP_PORT=465
-EMAIL_USERNAME=@shu.edu.cn
+EMAIL_USERNAME=your_address@shu.edu.cn
 EMAIL_PASSWORD=your_password
 RECIPIENT_EMAIL=recipient@example.com
+RECIPIENT_EMAIL=xiaoyuluowork@gmail.com
 LOG_PATH=.log
 ```
 
