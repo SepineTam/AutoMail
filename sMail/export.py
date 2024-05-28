@@ -5,7 +5,7 @@
 #
 # @Author : Sepine Tam
 # @Email  : sepinetam@gmail.com
-# @File   : log_export.py
+# @File   : export.py
 
 import pandas as pd
 from datetime import datetime
@@ -13,10 +13,14 @@ from datetime import datetime
 
 def export_log():
     # get export path
-    home = "export_log"
+    root = "export_log"
 
     # get log path
     from sMail.config import log_path
+    # print(log_path)
+
+    # with open(log_path, "r") as f:
+    #     print(f.read())
 
     # convert ori file
     df = pd.read_csv(log_path, encoding='utf-8', decimal=',')
@@ -24,7 +28,7 @@ def export_log():
     # make new path
     now_time = datetime.now().strftime('%Y-%m-%d-%H:%M:%S')
     new_name = f"{now_time}.log.csv"
-    new_path = f"{home}/{new_name}"
+    new_path = f"{root}/{new_name}"
 
     # save as .csv file
     df.to_csv(new_path, index=False, encoding='utf-8')
