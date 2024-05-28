@@ -1,0 +1,26 @@
+name: Build README
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Generate README files
+        run: |
+          cp README.template.md README.md
+          cp README.zh.template.md README.zh.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md README.zh.md
+          git commit -m 'Update README files'
+          git push
