@@ -1,0 +1,8 @@
+# ignore test folder
+test
+
+# don't git my log
+.log
+
+# don't git personal mail_config
+.env
