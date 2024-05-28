@@ -11,10 +11,7 @@ import pandas as pd
 from datetime import datetime
 
 
-def export_log():
-    # get export path
-    root = "export_log"
-
+def export_log(root="export_log"):
     # get log path
     from sMail.config import log_path
     # print(log_path)
