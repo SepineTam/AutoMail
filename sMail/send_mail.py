@@ -5,13 +5,11 @@
 #
 # @Author : Sepine Tam
 # @Email  : sepinetam@gmail.com
-# @File   : temp.py
+# @File   : send_mail.py
 
 import smtplib
 from email.mime.text import MIMEText
 from sMail.retry import retry
-from sMail.log import write_log
-from sMail.log import clear
 
 
 class Server:
@@ -76,34 +74,6 @@ def send_mail():
     # clear('.log')
     server = Server()
 
-    # try:
-    #     server.start_server()
-    #     print("successful start server")
-    # except Exception as e:
-    #     print(e)
-    #     write_log(e)
-    # try:
-    #     server.login()
-    #     print("successful login")
-    # except Exception as e:
-    #     print(e)
-    #     write_log(e)
-    # try:
-    #     msg = server.creat_msg(
-    #         sub='Test Mail',
-    #         body='This is a test message.'
-    #     )
-    #     server.send_msg(msg)
-    #     print("successful send mail")
-    # except Exception as e:
-    #     print(e)
-    #     write_log(e)
-    # try:
-    #     server.quit()
-    #     print("successful quit")
-    # except Exception as e:
-    #     print(e)
-    #     write_log(e)
     retry(server.start_server)
     retry(server.login)
     msg = server.creat_msg(

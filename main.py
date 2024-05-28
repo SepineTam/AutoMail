@@ -1,25 +1,18 @@
-from sMail.sendMail import send_mail
-import os
-import smtplib
-from email.mime.text import MIMEText
-from dotenv import load_dotenv
-from datetime import datetime
+from sMail import *
+from sMail.config import log_path
+
+
+def clear_log():
+    if input("Are you sure you want to delete the log?(Y/n)").upper() == "Y":
+        clear(log_path)
+    else:
+        pass
 
 
 def main():
-    # 加载环境变量
-    load_dotenv()
-
-    # 获取配置信息
-    username = os.getenv('EMAIL_USERNAME')
-    password = os.getenv('EMAIL_PASSWORD')
-    recipient = os.getenv('RECIPIENT_EMAIL')
-    port = int(os.getenv('SMTP_PORT'))
-    host = os.getenv('SMTP_SERVER')
-
-    # 日志文件路径
-    LOG_FILE = ".log"
-    send_mail(recipient, "Test Subject", "Test Body")
+    print("BEGIN...")
+    send()
+    print("OVER...")
 
 
 if __name__ == "__main__":

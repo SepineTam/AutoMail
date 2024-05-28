@@ -9,7 +9,7 @@
 
 from sMail.config import mail_config as config
 from sMail.log import clear
-from sMail.temp import send_mail
+from sMail.send_mail import send_mail
 from sMail.config import log_path
 
 
