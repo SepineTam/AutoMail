@@ -10,5 +10,5 @@
 from sMail.export import export_log as exLog
 
 
-exLog()
-
+exLog(root="export_log")
+print("Successful convert log to .csv file")
