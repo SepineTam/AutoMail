@@ -11,6 +11,7 @@ import smtplib
 from email.mime.text import MIMEText
 from sMail.retry import retry
 from sMail.log import write_log
+from sMail.log import clear
 
 
 class Server:
@@ -53,8 +54,8 @@ class Server:
         # write_log(response, self.log)
 
     def login(self):
-        print(self.server)
-        self.server.login(self.username, self.password)
+        # print(self.server)
+        self.server.login(self.email_address, self.password)
 
     def creat_msg(self, sub, body):
         msg = MIMEText(body)
@@ -72,30 +73,44 @@ class Server:
 
 
 def send_mail():
+    # clear('.log')
     server = Server()
-    try:
-        server.start_server()
-        print("successful start server")
-        server.login()
-        print("successful login")
-        msg = server.creat_msg(
-            sub='Test Mail',
-            body='This is a test message.'
-        )
-        server.send_msg(msg)
-        print("successful send mail")
-        server.quit()
-        print("successful quit")
-    except Exception as e:
-        print(e)
-        write_log(e)
-    # retry(server.start_server)
-    #  retry(server.login)
-    # msg = server.creat_msg(
-    #     'Test Mail', 'This is a test message.'
-    # )
-    # retry(server.send_msg, msg)
-    # print('successful send mail')
+
+    # try:
+    #     server.start_server()
+    #     print("successful start server")
+    # except Exception as e:
+    #     print(e)
+    #     write_log(e)
+    # try:
+    #     server.login()
+    #     print("successful login")
+    # except Exception as e:
+    #     print(e)
+    #     write_log(e)
+    # try:
+    #     msg = server.creat_msg(
+    #         sub='Test Mail',
+    #         body='This is a test message.'
+    #     )
+    #     server.send_msg(msg)
+    #     print("successful send mail")
+    # except Exception as e:
+    #     print(e)
+    #     write_log(e)
+    # try:
+    #     server.quit()
+    #     print("successful quit")
+    # except Exception as e:
+    #     print(e)
+    #     write_log(e)
+    retry(server.start_server)
+    retry(server.login)
+    msg = server.creat_msg(
+        'Test Mail', 'This is a test message.'
+    )
+    retry(server.send_msg, msg)
+    print('successful send mail')
 
 
 if __name__ == '__main__':
