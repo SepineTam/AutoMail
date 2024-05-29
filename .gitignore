@@ -1,8 +1,8 @@
 # ignore test folder
-test
+test/
 
 # ignore all log
-export_log
+export_log/
 .log
 
 # don't git personal mail_config
