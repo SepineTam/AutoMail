@@ -2,6 +2,10 @@
 
 这个项目是一个用于使用 Gmail 自动发送电子邮件的 Python 脚本。该脚本可以部署在 AWS EC2 实例上，并使用 `crontab` 定时运行。
 
+## Language
+- [English](README.md)
+- [简体中文](README_zh.md)
+
 # 使用说明
 
 ## 安装项目

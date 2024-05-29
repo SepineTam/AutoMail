@@ -2,6 +2,10 @@
 
 This project is a Python script for automating the sending of emails using Gmail. The script can be deployed on an AWS EC2 instance and scheduled to run at specific intervals using `crontab`.
 
+## Language
+- [English](README.md)
+- [简体中文](README_zh.md)
+
 # How to use
 
 ## Install Project
